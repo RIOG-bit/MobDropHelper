@@ -8,3 +8,10 @@ C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\Mo
 C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\MobDropHelper.csproj.CoreCompileInputs.cache
 C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\MobDropHelper.exe
 C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\MobDropHelper.pdb
+C:\Users\danci\Desktop\GitHub\FiveSeven\bin_source\Tools\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\MobDropHelper.csproj.AssemblyReference.cache
+C:\Users\danci\Desktop\GitHub\FiveSeven\bin_source\Tools\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\MobDropHelper.Form1.resources
+C:\Users\danci\Desktop\GitHub\FiveSeven\bin_source\Tools\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\MobDropHelper.Properties.Resources.resources
+C:\Users\danci\Desktop\GitHub\FiveSeven\bin_source\Tools\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\MobDropHelper.csproj.GenerateResource.cache
+C:\Users\danci\Desktop\GitHub\FiveSeven\bin_source\Tools\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\MobDropHelper.csproj.CoreCompileInputs.cache
+C:\Users\danci\Desktop\GitHub\FiveSeven\bin_source\Tools\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\MobDropHelper.exe
+C:\Users\danci\Desktop\GitHub\FiveSeven\bin_source\Tools\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Debug\MobDropHelper.pdb

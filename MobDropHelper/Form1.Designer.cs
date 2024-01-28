@@ -282,9 +282,10 @@
             // labelMobAmount
             // 
             this.labelMobAmount.AutoSize = true;
+            this.labelMobAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMobAmount.Location = new System.Drawing.Point(870, 181);
             this.labelMobAmount.Name = "labelMobAmount";
-            this.labelMobAmount.Size = new System.Drawing.Size(67, 13);
+            this.labelMobAmount.Size = new System.Drawing.Size(77, 13);
             this.labelMobAmount.TabIndex = 25;
             this.labelMobAmount.Text = "Mob Amount";
             this.labelMobAmount.Visible = false;

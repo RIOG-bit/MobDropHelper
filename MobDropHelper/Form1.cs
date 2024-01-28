@@ -434,6 +434,7 @@ namespace MobDropHelper
             labelKillOver.Visible = isVisible;
             textBoxKillOver.Visible = isVisible;
             buttonChance.Visible = isVisible;
+            labelChance.Visible = isVisible;
 
             bool isLimitVisible = checkBoxLimit.Checked;
             labelLevelLimit.Visible = isLimitVisible;
@@ -574,6 +575,5 @@ namespace MobDropHelper
                 }
             }
         }
-
     }
 }
