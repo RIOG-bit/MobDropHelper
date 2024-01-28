@@ -1,0 +1,10 @@
+C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\bin\Release\MobDropHelper.exe.config
+C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\bin\Release\MobDropHelper.exe
+C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\bin\Release\MobDropHelper.pdb
+C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Release\MobDropHelper.csproj.AssemblyReference.cache
+C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Release\MobDropHelper.Form1.resources
+C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Release\MobDropHelper.Properties.Resources.resources
+C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Release\MobDropHelper.csproj.GenerateResource.cache
+C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Release\MobDropHelper.csproj.CoreCompileInputs.cache
+C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Release\MobDropHelper.exe
+C:\Users\danci\Desktop\Mob Drop Renewal\MobDropHelper\MobDropHelper\obj\Release\MobDropHelper.pdb
