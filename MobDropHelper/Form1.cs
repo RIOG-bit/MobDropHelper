@@ -22,6 +22,7 @@ namespace MobDropHelper
         private string mobDropItemFilePath;
         private string mobNamesFilePath;
         private string itemNamesFilePath;
+        private string userSettingsFilePath;
 
         private string mob_drop_text;
         private int dropCounter = 1;
@@ -31,26 +32,64 @@ namespace MobDropHelper
         public Form1()
         {
             InitializeComponent();
+
             // Determine the paths
             string exePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             string mobDropPath = Path.Combine(exePath, "mob_drop");
             string namesPath = Path.Combine(exePath, "names");
+            string configPath = Path.Combine(exePath, "settings");
+
             // Ensure directories exist
             Directory.CreateDirectory(mobDropPath);
             Directory.CreateDirectory(namesPath);
+            Directory.CreateDirectory(configPath);
 
             // Define file paths
             mobDropItemFilePath = Path.Combine(mobDropPath, "mob_drop_item.txt");
             mobNamesFilePath = Path.Combine(namesPath, "mob_names.txt");
             itemNamesFilePath = Path.Combine(namesPath, "item_names.txt");
+            userSettingsFilePath = Path.Combine(configPath, "userSetting.txt");
 
-            listBoxResults.DoubleClick += listBoxResults_DoubleClick;
-            SetPlaceholderText(textBoxItemVnum, "Enter item name here"); // Set initial placeholder text
-            textBoxItemVnum.Enter += (sender, e) => ClearPlaceholderText(textBoxItemVnum, "Enter item name here");
-            textBoxItemVnum.Leave += (sender, e) => SetPlaceholderText(textBoxItemVnum, "Enter item name here");
-            SetPlaceholderText(textBoxMobVnum, "Enter mob name here");
-            textBoxMobVnum.Enter += (sender, e) => ClearPlaceholderText(textBoxMobVnum, "Enter mob name here");
-            textBoxMobVnum.Leave += (sender, e) => SetPlaceholderText(textBoxMobVnum, "Enter mob name here");
+            // Set initial check state
+            singleClickAddValueToolStripMenuItem.CheckOnClick = true;
+            doubleClickAddValueToolStripMenuItem.CheckOnClick = true;
+
+            // Load user setting
+            if (File.Exists(userSettingsFilePath))
+            {
+                string setting = File.ReadAllText(userSettingsFilePath);
+                if (setting == "SingleClick")
+                {
+                    singleClickAddValueToolStripMenuItem.Checked = true;
+                    listBoxResults.Click += listBoxResults_Click; // Subscribe to single click
+                    listBoxResults.DoubleClick -= listBoxResults_DoubleClick; // Ensure double click is not subscribed
+                }
+                else
+                {
+                    doubleClickAddValueToolStripMenuItem.Checked = true;
+                    listBoxResults.DoubleClick += listBoxResults_DoubleClick; // Subscribe to double click
+                    listBoxResults.Click -= listBoxResults_Click; // Ensure single click is not subscribed
+                }
+            }
+            else
+            {
+                // Set single click as default if no setting file found
+                singleClickAddValueToolStripMenuItem.Checked = true;
+                listBoxResults.Click += listBoxResults_Click; // Subscribe to single click
+                listBoxResults.DoubleClick -= listBoxResults_DoubleClick; // Ensure double click is not subscribed
+            }
+
+            // Assign event handlers
+            singleClickAddValueToolStripMenuItem.CheckedChanged += singleClickAddValueToolStripMenuItem_CheckedChanged;
+            doubleClickAddValueToolStripMenuItem.CheckedChanged += doubleClickAddValueToolStripMenuItem_CheckedChanged;
+
+            // Rest of your initialization code...
+            SetPlaceholderText(textBoxItemVnum, "Search item by name or vnum"); // Set initial placeholder text
+            textBoxItemVnum.Enter += (sender, e) => ClearPlaceholderText(textBoxItemVnum, "Search item by name or vnum");
+            textBoxItemVnum.Leave += (sender, e) => SetPlaceholderText(textBoxItemVnum, "Search item by name or vnum");
+            SetPlaceholderText(textBoxMobVnum, "Search mob by name or vnum");
+            textBoxMobVnum.Enter += (sender, e) => ClearPlaceholderText(textBoxMobVnum, "Search mob by name or vnum");
+            textBoxMobVnum.Leave += (sender, e) => SetPlaceholderText(textBoxMobVnum, "Search mob by name or vnum");
             LoadMobNames();
             LoadItemNames();
             UpdateMobAmountVisibility();
@@ -60,21 +99,21 @@ namespace MobDropHelper
             textBoxItemValue.TabIndex = 1;
             textBoxQuantity.TabIndex = 2;
             textBoxPercentage.TabIndex = 3;
-            if(checkBoxDrop.Checked)
+            if (checkBoxDrop.Checked)
             {
                 buttonField.TabIndex = 4;
             }
-            else if(checkBoxKill.Checked)
+            else if (checkBoxKill.Checked)
             {
                 textBoxMobAmount.TabIndex = 4;
                 textBoxKillOver.TabIndex = 5;
                 buttonField.TabIndex = 6;
-            }    
-            else if(checkBoxLimit.Checked)
+            }
+            else if (checkBoxLimit.Checked)
             {
                 textBoxLevelLimit.TabIndex = 4;
                 buttonField.TabIndex = 5;
-            }  
+            }
             textBoxItemName.TabStop = false;
             textBoxMobName.TabStop = false;
             richTextBoxFile.TabStop = false;
@@ -87,23 +126,22 @@ namespace MobDropHelper
             buttonCloseGroup.TabStop = false;
             buttonChance.TabStop = false;
             buttonWriteToFile.TabStop = false;
-
-
             textBoxItemName.TabIndex = 7;
-            textBoxMobValue.TextChanged += TextBox_mobTextChanged; // If textbox change
-            textBoxItemValue.TextChanged += TextBox_itemTextChanged; // If textbox change
-            buttonCreateFile.Click += ButtonCreateFile_Click; // Create text file if does not exist
-            buttonOpenFile.Click += buttonOpenFile_Click; // Open text file if exists
-            textBoxQuantity.KeyPress += textBoxQuantity_KeyPress; // Allow just numerical values in the textbox
-            checkBoxDrop.CheckedChanged += checkBoxDrop_CheckedChanged; // Change state of the checkboxes visibility
-            checkBoxKill.CheckedChanged += checkBoxKill_CheckedChanged; // Change state of the checkboxes visibility
-            checkBoxLimit.CheckedChanged += checkBoxLimit_CheckedChanged; // Change state of the checkboxes visibility
+            textBoxMobValue.TextChanged += TextBox_mobTextChanged;
+            textBoxItemValue.TextChanged += TextBox_itemTextChanged;
+            buttonCreateFile.Click += ButtonCreateFile_Click;
+            buttonOpenFile.Click += buttonOpenFile_Click;
+            textBoxQuantity.KeyPress += textBoxQuantity_KeyPress;
+            checkBoxDrop.CheckedChanged += checkBoxDrop_CheckedChanged;
+            checkBoxKill.CheckedChanged += checkBoxKill_CheckedChanged;
+            checkBoxLimit.CheckedChanged += checkBoxLimit_CheckedChanged;
             buttonOpenGroup.Click += buttonOpenGroup_Click;
             buttonField.Click += buttonField_Click;
             buttonCloseGroup.Click += buttonCloseGroup_Click;
             buttonWriteToFile.Click += buttonWriteToFile_Click;
             buttonChance.Click += buttonDropChance_Click;
         }
+
 
         private void textBoxMobValue_TextChanged(object sender, EventArgs e)
         {
@@ -460,29 +498,42 @@ namespace MobDropHelper
             }
         }
 
-        private List<KeyValuePair<int, string>> FindMobsByName(string mobName)
+        private List<KeyValuePair<int, string>> FindMobsByNameOrKey(string searchText)
         {
             var matchingMobs = new List<KeyValuePair<int, string>>();
 
-            foreach (var pair in mobNames)
+            // Check if searchText is numeric, then search by key
+            if (int.TryParse(searchText, out int key))
             {
-                if (pair.Value.StartsWith(mobName, StringComparison.OrdinalIgnoreCase))
+                if (mobNames.TryGetValue(key, out string value))
                 {
-                    matchingMobs.Add(pair);
+                    matchingMobs.Add(new KeyValuePair<int, string>(key, value));
+                }
+            }
+            else
+            {
+                // Search by name
+                foreach (var pair in mobNames)
+                {
+                    if (pair.Value.StartsWith(searchText, StringComparison.OrdinalIgnoreCase))
+                    {
+                        matchingMobs.Add(pair);
+                    }
                 }
             }
 
             return matchingMobs;
         }
+
         private void TextBoxSearchMobVNUM_TextChanged(object sender, EventArgs e)
         {
             lastSearchType = "mob";
             listBoxResults.Items.Clear(); // Clear previous results
-            var mobName = textBoxMobVnum.Text;
+            var searchText = textBoxMobVnum.Text;
 
-            if (!string.IsNullOrWhiteSpace(mobName))
+            if (!string.IsNullOrWhiteSpace(searchText))
             {
-                var matchingMobs = FindMobsByName(mobName);
+                var matchingMobs = FindMobsByNameOrKey(searchText);
                 if (matchingMobs.Count > 0)
                 {
                     foreach (var mob in matchingMobs)
@@ -492,34 +543,47 @@ namespace MobDropHelper
                 }
                 else
                 {
-                    listBoxResults.Items.Add("Mob name not found.");
+                    listBoxResults.Items.Add("No matching mob found.");
                 }
             }
         }
-        private List<KeyValuePair<int, string>> FindItemsByName(string itemName)
+        private List<KeyValuePair<int, string>> FindItemsByNameOrKey(string searchText)
         {
             var matchingItems = new List<KeyValuePair<int, string>>();
 
-            foreach (var pair in itemNames)
+            // Check if searchText is numeric, then search by key
+            if (int.TryParse(searchText, out int key))
             {
-                if (pair.Value.StartsWith(itemName, StringComparison.OrdinalIgnoreCase))
+                if (itemNames.TryGetValue(key, out string value))
                 {
-                    matchingItems.Add(pair);
+                    matchingItems.Add(new KeyValuePair<int, string>(key, value));
+                }
+            }
+            else
+            {
+                // Search by name
+                foreach (var pair in itemNames)
+                {
+                    if (pair.Value.StartsWith(searchText, StringComparison.OrdinalIgnoreCase))
+                    {
+                        matchingItems.Add(pair);
+                    }
                 }
             }
 
             return matchingItems;
         }
 
+
         private void TextBoxSearchItemVNUM_TextChanged(object sender, EventArgs e)
         {
             lastSearchType = "item";
             listBoxResults.Items.Clear(); // Clear previous results
-            var itemName = textBoxItemVnum.Text;
+            var searchText = textBoxItemVnum.Text;
 
-            if (!string.IsNullOrWhiteSpace(itemName))
+            if (!string.IsNullOrWhiteSpace(searchText))
             {
-                var matchingItems = FindItemsByName(itemName);
+                var matchingItems = FindItemsByNameOrKey(searchText);
                 if (matchingItems.Count > 0)
                 {
                     foreach (var item in matchingItems)
@@ -529,10 +593,11 @@ namespace MobDropHelper
                 }
                 else
                 {
-                    listBoxResults.Items.Add("Item name not found.");
+                    listBoxResults.Items.Add("No matching item found.");
                 }
             }
         }
+
 
         private void SetPlaceholderText(TextBox textBox, string placeholderText)
         {
@@ -551,8 +616,7 @@ namespace MobDropHelper
                 textBox.ForeColor = Color.Black;
             }
         }
-
-        private void listBoxResults_DoubleClick(object sender, EventArgs e)
+        private void ProcessListBoxSelection()
         {
             if (listBoxResults.SelectedItem != null)
             {
@@ -574,6 +638,44 @@ namespace MobDropHelper
                     }
                 }
             }
+        }
+
+        private void listBoxResults_Click(object sender, EventArgs e)
+        {
+            ProcessListBoxSelection();
+        }
+
+        private void listBoxResults_DoubleClick(object sender, EventArgs e)
+        {
+            ProcessListBoxSelection();
+        }
+
+        private void singleClickAddValueToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            if (singleClickAddValueToolStripMenuItem.Checked)
+            {
+                doubleClickAddValueToolStripMenuItem.Checked = false;
+                listBoxResults.Click += listBoxResults_Click;
+                listBoxResults.DoubleClick -= listBoxResults_DoubleClick;
+                // Save the user setting
+                SaveUserSetting("SingleClick");
+            }
+        }
+
+        private void doubleClickAddValueToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            if (doubleClickAddValueToolStripMenuItem.Checked)
+            {
+                singleClickAddValueToolStripMenuItem.Checked = false;
+                listBoxResults.Click -= listBoxResults_Click;
+                listBoxResults.DoubleClick += listBoxResults_DoubleClick;
+                // Save the user setting
+                SaveUserSetting("DoubleClick");
+            }
+        }
+        private void SaveUserSetting(string setting)
+        {
+            File.WriteAllText(userSettingsFilePath, setting);
         }
     }
 }

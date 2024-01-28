@@ -65,12 +65,17 @@
             this.textBoxMobVnum = new System.Windows.Forms.TextBox();
             this.listBoxResults = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStripFile = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.singleClickAddValueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.doubleClickAddValueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStripFile.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxMobValue
             // 
-            this.textBoxMobValue.Location = new System.Drawing.Point(300, 148);
+            this.textBoxMobValue.Location = new System.Drawing.Point(300, 169);
             this.textBoxMobValue.Name = "textBoxMobValue";
             this.textBoxMobValue.ReadOnly = true;
             this.textBoxMobValue.Size = new System.Drawing.Size(100, 20);
@@ -81,7 +86,7 @@
             // 
             this.labelMobValue.AutoSize = true;
             this.labelMobValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMobValue.Location = new System.Drawing.Point(235, 151);
+            this.labelMobValue.Location = new System.Drawing.Point(235, 172);
             this.labelMobValue.Name = "labelMobValue";
             this.labelMobValue.Size = new System.Drawing.Size(67, 13);
             this.labelMobValue.TabIndex = 1;
@@ -90,7 +95,7 @@
             // labelMobName
             // 
             this.labelMobName.AutoSize = true;
-            this.labelMobName.Location = new System.Drawing.Point(434, 151);
+            this.labelMobName.Location = new System.Drawing.Point(434, 172);
             this.labelMobName.Name = "labelMobName";
             this.labelMobName.Size = new System.Drawing.Size(0, 13);
             this.labelMobName.TabIndex = 2;
@@ -99,7 +104,7 @@
             // 
             this.labelMobNames.AutoSize = true;
             this.labelMobNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMobNames.Location = new System.Drawing.Point(406, 151);
+            this.labelMobNames.Location = new System.Drawing.Point(406, 172);
             this.labelMobNames.Name = "labelMobNames";
             this.labelMobNames.Size = new System.Drawing.Size(67, 13);
             this.labelMobNames.TabIndex = 3;
@@ -107,7 +112,7 @@
             // 
             // textBoxMobName
             // 
-            this.textBoxMobName.Location = new System.Drawing.Point(475, 148);
+            this.textBoxMobName.Location = new System.Drawing.Point(475, 169);
             this.textBoxMobName.Name = "textBoxMobName";
             this.textBoxMobName.ReadOnly = true;
             this.textBoxMobName.Size = new System.Drawing.Size(386, 20);
@@ -117,7 +122,7 @@
             // 
             this.labelItemValue.AutoSize = true;
             this.labelItemValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemValue.Location = new System.Drawing.Point(235, 181);
+            this.labelItemValue.Location = new System.Drawing.Point(235, 202);
             this.labelItemValue.Name = "labelItemValue";
             this.labelItemValue.Size = new System.Drawing.Size(67, 13);
             this.labelItemValue.TabIndex = 5;
@@ -125,7 +130,7 @@
             // 
             // textBoxItemValue
             // 
-            this.textBoxItemValue.Location = new System.Drawing.Point(300, 178);
+            this.textBoxItemValue.Location = new System.Drawing.Point(300, 199);
             this.textBoxItemValue.Name = "textBoxItemValue";
             this.textBoxItemValue.ReadOnly = true;
             this.textBoxItemValue.Size = new System.Drawing.Size(100, 20);
@@ -135,7 +140,7 @@
             // 
             this.labelItemNames.AutoSize = true;
             this.labelItemNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemNames.Location = new System.Drawing.Point(406, 181);
+            this.labelItemNames.Location = new System.Drawing.Point(406, 202);
             this.labelItemNames.Name = "labelItemNames";
             this.labelItemNames.Size = new System.Drawing.Size(67, 13);
             this.labelItemNames.TabIndex = 7;
@@ -143,7 +148,7 @@
             // 
             // textBoxItemName
             // 
-            this.textBoxItemName.Location = new System.Drawing.Point(475, 178);
+            this.textBoxItemName.Location = new System.Drawing.Point(475, 199);
             this.textBoxItemName.Name = "textBoxItemName";
             this.textBoxItemName.ReadOnly = true;
             this.textBoxItemName.Size = new System.Drawing.Size(386, 20);
@@ -151,7 +156,7 @@
             // 
             // buttonCreateFile
             // 
-            this.buttonCreateFile.Location = new System.Drawing.Point(238, 699);
+            this.buttonCreateFile.Location = new System.Drawing.Point(238, 720);
             this.buttonCreateFile.Name = "buttonCreateFile";
             this.buttonCreateFile.Size = new System.Drawing.Size(75, 23);
             this.buttonCreateFile.TabIndex = 9;
@@ -160,7 +165,7 @@
             // 
             // richTextBoxFile
             // 
-            this.richTextBoxFile.Location = new System.Drawing.Point(238, 234);
+            this.richTextBoxFile.Location = new System.Drawing.Point(238, 255);
             this.richTextBoxFile.Name = "richTextBoxFile";
             this.richTextBoxFile.ReadOnly = true;
             this.richTextBoxFile.Size = new System.Drawing.Size(991, 459);
@@ -169,7 +174,7 @@
             // 
             // buttonOpenFile
             // 
-            this.buttonOpenFile.Location = new System.Drawing.Point(319, 699);
+            this.buttonOpenFile.Location = new System.Drawing.Point(319, 720);
             this.buttonOpenFile.Name = "buttonOpenFile";
             this.buttonOpenFile.Size = new System.Drawing.Size(75, 23);
             this.buttonOpenFile.TabIndex = 11;
@@ -180,7 +185,7 @@
             // 
             this.labelQuantity.AutoSize = true;
             this.labelQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuantity.Location = new System.Drawing.Point(870, 151);
+            this.labelQuantity.Location = new System.Drawing.Point(870, 172);
             this.labelQuantity.Name = "labelQuantity";
             this.labelQuantity.Size = new System.Drawing.Size(82, 13);
             this.labelQuantity.TabIndex = 12;
@@ -188,7 +193,7 @@
             // 
             // textBoxQuantity
             // 
-            this.textBoxQuantity.Location = new System.Drawing.Point(955, 148);
+            this.textBoxQuantity.Location = new System.Drawing.Point(955, 169);
             this.textBoxQuantity.Name = "textBoxQuantity";
             this.textBoxQuantity.Size = new System.Drawing.Size(100, 20);
             this.textBoxQuantity.TabIndex = 13;
@@ -197,7 +202,7 @@
             // 
             this.labelPercentage.AutoSize = true;
             this.labelPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPercentage.Location = new System.Drawing.Point(1060, 151);
+            this.labelPercentage.Location = new System.Drawing.Point(1060, 172);
             this.labelPercentage.Name = "labelPercentage";
             this.labelPercentage.Size = new System.Drawing.Size(93, 13);
             this.labelPercentage.TabIndex = 14;
@@ -205,7 +210,7 @@
             // 
             // textBoxPercentage
             // 
-            this.textBoxPercentage.Location = new System.Drawing.Point(1150, 148);
+            this.textBoxPercentage.Location = new System.Drawing.Point(1150, 169);
             this.textBoxPercentage.Name = "textBoxPercentage";
             this.textBoxPercentage.Size = new System.Drawing.Size(79, 20);
             this.textBoxPercentage.TabIndex = 15;
@@ -214,7 +219,7 @@
             // 
             this.checkBoxDrop.AutoSize = true;
             this.checkBoxDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxDrop.Location = new System.Drawing.Point(300, 210);
+            this.checkBoxDrop.Location = new System.Drawing.Point(300, 231);
             this.checkBoxDrop.Name = "checkBoxDrop";
             this.checkBoxDrop.Size = new System.Drawing.Size(53, 17);
             this.checkBoxDrop.TabIndex = 18;
@@ -225,7 +230,7 @@
             // 
             this.checkBoxKill.AutoSize = true;
             this.checkBoxKill.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxKill.Location = new System.Drawing.Point(400, 210);
+            this.checkBoxKill.Location = new System.Drawing.Point(400, 231);
             this.checkBoxKill.Name = "checkBoxKill";
             this.checkBoxKill.Size = new System.Drawing.Size(43, 17);
             this.checkBoxKill.TabIndex = 19;
@@ -236,7 +241,7 @@
             // 
             this.checkBoxLimit.AutoSize = true;
             this.checkBoxLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxLimit.Location = new System.Drawing.Point(500, 210);
+            this.checkBoxLimit.Location = new System.Drawing.Point(500, 231);
             this.checkBoxLimit.Name = "checkBoxLimit";
             this.checkBoxLimit.Size = new System.Drawing.Size(52, 17);
             this.checkBoxLimit.TabIndex = 20;
@@ -245,7 +250,7 @@
             // 
             // buttonField
             // 
-            this.buttonField.Location = new System.Drawing.Point(481, 699);
+            this.buttonField.Location = new System.Drawing.Point(481, 720);
             this.buttonField.Name = "buttonField";
             this.buttonField.Size = new System.Drawing.Size(75, 23);
             this.buttonField.TabIndex = 21;
@@ -254,7 +259,7 @@
             // 
             // buttonOpenGroup
             // 
-            this.buttonOpenGroup.Location = new System.Drawing.Point(400, 699);
+            this.buttonOpenGroup.Location = new System.Drawing.Point(400, 720);
             this.buttonOpenGroup.Name = "buttonOpenGroup";
             this.buttonOpenGroup.Size = new System.Drawing.Size(75, 23);
             this.buttonOpenGroup.TabIndex = 22;
@@ -263,7 +268,7 @@
             // 
             // buttonCloseGroup
             // 
-            this.buttonCloseGroup.Location = new System.Drawing.Point(562, 699);
+            this.buttonCloseGroup.Location = new System.Drawing.Point(562, 720);
             this.buttonCloseGroup.Name = "buttonCloseGroup";
             this.buttonCloseGroup.Size = new System.Drawing.Size(75, 23);
             this.buttonCloseGroup.TabIndex = 23;
@@ -272,7 +277,7 @@
             // 
             // buttonWriteToFile
             // 
-            this.buttonWriteToFile.Location = new System.Drawing.Point(643, 699);
+            this.buttonWriteToFile.Location = new System.Drawing.Point(643, 720);
             this.buttonWriteToFile.Name = "buttonWriteToFile";
             this.buttonWriteToFile.Size = new System.Drawing.Size(75, 23);
             this.buttonWriteToFile.TabIndex = 24;
@@ -283,7 +288,7 @@
             // 
             this.labelMobAmount.AutoSize = true;
             this.labelMobAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMobAmount.Location = new System.Drawing.Point(870, 181);
+            this.labelMobAmount.Location = new System.Drawing.Point(870, 202);
             this.labelMobAmount.Name = "labelMobAmount";
             this.labelMobAmount.Size = new System.Drawing.Size(77, 13);
             this.labelMobAmount.TabIndex = 25;
@@ -292,7 +297,7 @@
             // 
             // textBoxMobAmount
             // 
-            this.textBoxMobAmount.Location = new System.Drawing.Point(945, 178);
+            this.textBoxMobAmount.Location = new System.Drawing.Point(945, 199);
             this.textBoxMobAmount.Name = "textBoxMobAmount";
             this.textBoxMobAmount.Size = new System.Drawing.Size(100, 20);
             this.textBoxMobAmount.TabIndex = 26;
@@ -302,7 +307,7 @@
             // 
             this.labelKillOver.AutoSize = true;
             this.labelKillOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKillOver.Location = new System.Drawing.Point(1063, 181);
+            this.labelKillOver.Location = new System.Drawing.Point(1063, 202);
             this.labelKillOver.Name = "labelKillOver";
             this.labelKillOver.Size = new System.Drawing.Size(55, 13);
             this.labelKillOver.TabIndex = 27;
@@ -311,7 +316,7 @@
             // 
             // textBoxKillOver
             // 
-            this.textBoxKillOver.Location = new System.Drawing.Point(1120, 178);
+            this.textBoxKillOver.Location = new System.Drawing.Point(1120, 199);
             this.textBoxKillOver.Name = "textBoxKillOver";
             this.textBoxKillOver.Size = new System.Drawing.Size(109, 20);
             this.textBoxKillOver.TabIndex = 28;
@@ -321,7 +326,7 @@
             // 
             this.labelLevelLimit.AutoSize = true;
             this.labelLevelLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLevelLimit.Location = new System.Drawing.Point(873, 181);
+            this.labelLevelLimit.Location = new System.Drawing.Point(873, 202);
             this.labelLevelLimit.Name = "labelLevelLimit";
             this.labelLevelLimit.Size = new System.Drawing.Size(68, 13);
             this.labelLevelLimit.TabIndex = 29;
@@ -330,7 +335,7 @@
             // 
             // textBoxLevelLimit
             // 
-            this.textBoxLevelLimit.Location = new System.Drawing.Point(955, 178);
+            this.textBoxLevelLimit.Location = new System.Drawing.Point(955, 199);
             this.textBoxLevelLimit.Name = "textBoxLevelLimit";
             this.textBoxLevelLimit.Size = new System.Drawing.Size(100, 20);
             this.textBoxLevelLimit.TabIndex = 30;
@@ -339,14 +344,14 @@
             // labelChance
             // 
             this.labelChance.AutoSize = true;
-            this.labelChance.Location = new System.Drawing.Point(873, 211);
+            this.labelChance.Location = new System.Drawing.Point(873, 232);
             this.labelChance.Name = "labelChance";
             this.labelChance.Size = new System.Drawing.Size(0, 13);
             this.labelChance.TabIndex = 31;
             // 
             // buttonChance
             // 
-            this.buttonChance.Location = new System.Drawing.Point(724, 699);
+            this.buttonChance.Location = new System.Drawing.Point(724, 720);
             this.buttonChance.Name = "buttonChance";
             this.buttonChance.Size = new System.Drawing.Size(137, 23);
             this.buttonChance.TabIndex = 32;
@@ -358,7 +363,7 @@
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.ImageLocation = "Resources/wall.jpg";
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1219, 125);
             this.pictureBox1.TabIndex = 33;
@@ -367,7 +372,7 @@
             // textBoxItemVnum
             // 
             this.textBoxItemVnum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxItemVnum.Location = new System.Drawing.Point(12, 178);
+            this.textBoxItemVnum.Location = new System.Drawing.Point(12, 199);
             this.textBoxItemVnum.Name = "textBoxItemVnum";
             this.textBoxItemVnum.Size = new System.Drawing.Size(217, 20);
             this.textBoxItemVnum.TabIndex = 35;
@@ -375,7 +380,7 @@
             // textBoxMobVnum
             // 
             this.textBoxMobVnum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMobVnum.Location = new System.Drawing.Point(12, 148);
+            this.textBoxMobVnum.Location = new System.Drawing.Point(12, 169);
             this.textBoxMobVnum.Name = "textBoxMobVnum";
             this.textBoxMobVnum.Size = new System.Drawing.Size(217, 20);
             this.textBoxMobVnum.TabIndex = 38;
@@ -384,7 +389,7 @@
             // 
             this.listBoxResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxResults.FormattingEnabled = true;
-            this.listBoxResults.Location = new System.Drawing.Point(12, 208);
+            this.listBoxResults.Location = new System.Drawing.Point(12, 229);
             this.listBoxResults.Name = "listBoxResults";
             this.listBoxResults.Size = new System.Drawing.Size(220, 511);
             this.listBoxResults.TabIndex = 39;
@@ -393,17 +398,48 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(235, 211);
+            this.label1.Location = new System.Drawing.Point(235, 232);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 40;
             this.label1.Text = "Types:";
             // 
+            // menuStripFile
+            // 
+            this.menuStripFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStripFile.Location = new System.Drawing.Point(0, 0);
+            this.menuStripFile.Name = "menuStripFile";
+            this.menuStripFile.Size = new System.Drawing.Size(1243, 24);
+            this.menuStripFile.TabIndex = 42;
+            this.menuStripFile.Text = "File";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.singleClickAddValueToolStripMenuItem,
+            this.doubleClickAddValueToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItem1.Text = "File";
+            // 
+            // singleClickAddValueToolStripMenuItem
+            // 
+            this.singleClickAddValueToolStripMenuItem.Name = "singleClickAddValueToolStripMenuItem";
+            this.singleClickAddValueToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.singleClickAddValueToolStripMenuItem.Text = "Single Click Add Value";
+            // 
+            // doubleClickAddValueToolStripMenuItem
+            // 
+            this.doubleClickAddValueToolStripMenuItem.Name = "doubleClickAddValueToolStripMenuItem";
+            this.doubleClickAddValueToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.doubleClickAddValueToolStripMenuItem.Text = "Double Click Add Value";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 730);
+            this.ClientSize = new System.Drawing.Size(1243, 751);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxResults);
             this.Controls.Add(this.textBoxMobVnum);
@@ -440,10 +476,13 @@
             this.Controls.Add(this.labelMobName);
             this.Controls.Add(this.labelMobValue);
             this.Controls.Add(this.textBoxMobValue);
+            this.Controls.Add(this.menuStripFile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "MobDropHelper";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStripFile.ResumeLayout(false);
+            this.menuStripFile.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,6 +526,10 @@
         private System.Windows.Forms.TextBox textBoxMobVnum;
         private System.Windows.Forms.ListBox listBoxResults;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStripFile;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem singleClickAddValueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem doubleClickAddValueToolStripMenuItem;
     }
 }
 
